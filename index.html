@@ -3,15 +3,29 @@
 <head>
   <meta charset="utf-8">
   <title>gameTest</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" media="all"/>
 </head>
 <body>
-	<div id="container"></div>
+	<div id="container">
+		<svg viewBox="0 0 960 640" width="100%" height="100%"></svg>
+	</div>
 </body>
 <script>
 // var RequestAnimationFrame=webkitRequestAnimationFrame||mozRequestAnimationFrame;
 // (function(){console.log('123456');RequestAnimationFrame(arguments.callee);})();
-function setContainerSize(){
-  
-}
+(function(){
+  window.orientationchange=window.onresize=function(e){
+  	var width=document.body.clientWidth;
+  	var height=document.body.clientHeight;
+    //根据比例计算理论上的宽高
+  	var cHeight=width*640/960;
+    var cWidth=height*960/640;
+    if(cHeight>=height){width=cWidth;}
+    if(cWidth>=width){height=cHeight;}
+    console.log(width,height,width/height);
+    document.getElementById('container').style.width=width+"px";
+    document.getElementById('container').style.height=height+"px";
+  }
+})();
 </script>
 </html>
