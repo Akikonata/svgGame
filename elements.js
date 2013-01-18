@@ -3,8 +3,7 @@ var svgns="http://www.w3.org/2000/svg";
 function Sprite(){
 	
 }
-Sprite.prototype.rx=30;
-Sprite.prototype.ry=20;
+Sprite.prototype.r=30;
 Sprite.prototype.cx=200;
 Sprite.prototype.cy=320;
 Sprite.prototype.id=null;
@@ -15,23 +14,22 @@ Monster.prototype=Sprite.prototype;
 
 function Role(){
 	this.init=function(){
-		var _tmp=document.createElementNS(svgns,'ellipse');
+		var _tmp=document.createElementNS(svgns,'circle');
 		_tmp.setAttribute('cx',200);
 		_tmp.setAttribute('cy',320);
-		_tmp.setAttribute('rx',30);
-		_tmp.setAttribute('ry',20);
+		_tmp.setAttribute('r',30);
 		_tmp.setAttribute('fill','blue');
 		_tmp.setAttribute('class','role');
 		_tmp.setAttribute('id','r0');//设置人物的id
-		var animate=document.createElementNS(svgns,'animate');//设置相关动画
-		animate.setAttribute('attributeName','ry');
-		animate.setAttribute('attributeType','XML');
-		animate.setAttribute('begin','0s');
-		animate.setAttribute('dur','3s');
-		animate.setAttribute('fill','freeze');
-		animate.setAttribute('from','0');
-		animate.setAttribute('to','30');
-	    _tmp.appendChild(animate);
+		// var animate=document.createElementNS(svgns,'animate');//设置相关动画
+		// animate.setAttribute('attributeName','ry');
+		// animate.setAttribute('attributeType','XML');
+		// animate.setAttribute('begin','0s');
+		// animate.setAttribute('dur','3s');
+		// animate.setAttribute('fill','freeze');
+		// animate.setAttribute('from','0');
+		// animate.setAttribute('to','30');
+	    //_tmp.appendChild(animate);
 		this.id='r0';
 		return _tmp;
     }
@@ -42,14 +40,20 @@ function Role(){
     function bind(){
 
     }
+    this.checkNear=function(){
+
+    }
+    //吃掉
+    this.Eat=function(m){
+
+    }
 }
 function Monster(){
 	this.init=function(){
-		var _tmp=document.createElementNS(svgns,'ellipse');
+		var _tmp=document.createElementNS(svgns,'circle');
 		_tmp.setAttribute('cx',960);
 		_tmp.setAttribute('cy',640*Math.random());
-		_tmp.setAttribute('rx',this.rx);
-		_tmp.setAttribute('ry',20);
+		_tmp.setAttribute('r',this.r);
 		_tmp.setAttribute('fill','blue');
 		_tmp.setAttribute('class','monster');
 		//随机生成id,如果超过10次皆重复则不返回_tmp

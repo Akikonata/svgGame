@@ -7,7 +7,11 @@ State.prototype.update=function(){}
 function Intro(){
 	//生成开场的界面
 	var _tmp="<div id='intro' class='bg-gra'>"+
-		"<svg viewBox='0 0 960 640' width='100%' height='100%'><circle cx='480' cy='320' r='100' fill='pink'></circle><text x='430' y='320' id='start'>Start</text></svg>"
+		"<svg viewBox='0 0 960 640' width='100%' height='100%'><circle cx='480' cy='320' r='100' fill='pink'></circle><text x='430' y='320' id='start'>Start</text>"+
+      "<g>"+
+        ""
+      +"</g>"
+    +"</svg>"
 	+"</div>";
 	this.enter=function(){
 		document.body.innerHTML=_tmp;

@@ -13,6 +13,6 @@ body{
 	cursor: pointer;
 }
 .bg-gra{
-   background: -webkit-linear-gradient(top, #a864a8,#8393ca);
-   background: -o-linear-gradient(top, #a864a8,#8393ca);
+   background: -webkit-linear-gradient(top, #003471,#00aeef);
+   background: -o-linear-gradient(top, #003471,#00aeef);
 }
