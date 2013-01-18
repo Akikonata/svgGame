@@ -9,10 +9,11 @@ Sprite.prototype.cx=200;
 Sprite.prototype.cy=320;
 Sprite.prototype.id=null;
 
+//两个类均继承自Sprite
 Role.prototype=Sprite.prototype;
 Monster.prototype=Sprite.prototype;
+
 function Role(){
-	this.larging=true;
 	this.init=function(){
 		var _tmp=document.createElementNS(svgns,'ellipse');
 		_tmp.setAttribute('cx',200);
@@ -22,20 +23,24 @@ function Role(){
 		_tmp.setAttribute('fill','blue');
 		_tmp.setAttribute('class','role');
 		_tmp.setAttribute('id','r0');//设置人物的id
+		var animate=document.createElementNS(svgns,'animate');//设置相关动画
+		animate.setAttribute('attributeName','ry');
+		animate.setAttribute('attributeType','XML');
+		animate.setAttribute('begin','0s');
+		animate.setAttribute('dur','3s');
+		animate.setAttribute('fill','freeze');
+		animate.setAttribute('from','0');
+		animate.setAttribute('to','30');
+	    _tmp.appendChild(animate);
 		this.id='r0';
 		return _tmp;
     }
     this.draw=function(){
-    	var tmp=document.getElementById(this.id);
-    	var ry=tmp.getAttribute('ry');
-    	if(this.larging){
-    		tmp.setAttribute('ry',parseInt(ry)+1);
-    		(tmp.getAttribute('ry')==this.rx)&&(this.larging=false);
-    	}
-    	else{
-    		tmp.setAttribute('ry',parseInt(ry)-1);
-    		(tmp.getAttribute('ry')==this.rx*2/3)&&(this.larging=true);
-    	}
+    	
+    }
+    //初始化事件响应
+    function bind(){
+
     }
 }
 function Monster(){
