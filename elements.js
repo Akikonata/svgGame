@@ -14,22 +14,16 @@ Monster.prototype=Sprite.prototype;
 
 function Role(){
 	this.init=function(){
-		var _tmp=document.createElementNS(svgns,'circle');
-		_tmp.setAttribute('cx',200);
-		_tmp.setAttribute('cy',320);
-		_tmp.setAttribute('r',30);
-		_tmp.setAttribute('fill','blue');
-		_tmp.setAttribute('class','role');
-		_tmp.setAttribute('id','r0');//设置人物的id
-		// var animate=document.createElementNS(svgns,'animate');//设置相关动画
-		// animate.setAttribute('attributeName','ry');
-		// animate.setAttribute('attributeType','XML');
-		// animate.setAttribute('begin','0s');
-		// animate.setAttribute('dur','3s');
-		// animate.setAttribute('fill','freeze');
-		// animate.setAttribute('from','0');
-		// animate.setAttribute('to','30');
-	    //_tmp.appendChild(animate);
+		var _tmp=document.createElementNS(svgns,'g');
+		var Rshape=new shape.fishRole();
+		Rshape.path.forEach(
+			function(o){
+				PPath=document.createElementNS(svgns,'path');
+				PPath.setAttribute('d',o.d);
+				PPath.setAttribute('fill',o.f);
+				_tmp.appendChild(PPath);
+			}
+		);
 		this.id='r0';
 		return _tmp;
     }

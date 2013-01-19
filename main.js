@@ -6,13 +6,7 @@ State.prototype.update=function(){}
 //派生出三个类
 function Intro(){
 	//生成开场的界面
-	var _tmp="<div id='intro' class='bg-gra'>"+
-		"<svg viewBox='0 0 960 640' width='100%' height='100%'><circle cx='480' cy='320' r='100' fill='pink'></circle><text x='430' y='320' id='start'>Start</text>"+
-      "<g>"+
-        ""
-      +"</g>"
-    +"</svg>"
-	+"</div>";
+	var _tmp="<svg class='bg-gra' viewBox='0 0 960 640' width='100%' height='100%'><circle cx='480' cy='320' r='100' fill='pink'></circle><text x='430' y='320' id='start'>Start</text></svg>";
 	this.enter=function(){
 		document.body.innerHTML=_tmp;
     bind();
@@ -28,9 +22,9 @@ Intro.prototype=State.prototype;
 var monsters=[];
 //定义开场
 function Journey(){
-  var _tmp="<div id='journey' class='bg-gra'>"+
-    "<svg viewBox='0 0 960 640' width='100%' height='100%' id='stage'></svg>"
-  +"</div>";
+  var _tmp=
+    "<svg class='bg-gra' viewBox='0 0 960 640' width='100%' height='100%' id='stage'>"
+    +"</svg>";
   var role=new Role();
   function setMonster(){
     //一定几率产生新的怪物
