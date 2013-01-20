@@ -12,6 +12,22 @@ body{
 	font-size: 50px;
 	cursor: pointer;
 }
+#start-circle{
+	cursor: pointer;
+    fill:rgba(255,255,255,.5);
+	stroke:white; 
+	stroke-width:3px;
+}
+.cmd-btn{
+	cursor: pointer;
+    fill:rgba(255,255,255,.5);
+	stroke:white; 
+	stroke-width:3px;
+}
+#count{
+	font-size: 30px;
+	color: red;
+}
 .bg-gra{
    background: -webkit-linear-gradient(top, #003471,#00aeef);
    background: -o-linear-gradient(top, #003471,#00aeef);
